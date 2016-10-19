@@ -1,0 +1,28 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 well well-sm">
+            <div *ngIf="message">
+                <div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="emptyMsg()">&times;</a>
+                    {{message}}
+                </div>
+            </div>
+            <legend><i class="glyphicon glyphicon-globe"></i> Sign In</legend>
+            <form #signInForm='ngForm' class="form" role="form" (submit)="signIn(signInForm.value)">
+                <input class="form-control" name="email" ngModel placeholder="Your Email" type="email" #email="ngModel"
+                       required/>
+                <br>
+                <input class="form-control" name="password" ngModel placeholder="Enter Password" type="password"
+                       #password="ngModel" required/>
+                <br>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" [disabled]="!signInForm.valid" type="submit">
+                    Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

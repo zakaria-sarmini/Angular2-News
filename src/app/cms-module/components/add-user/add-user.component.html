@@ -1,0 +1,48 @@
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 well well-sm">
+            <div *ngIf="success">
+                <div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="emptyMsg()">&times;</a>
+                    <p>{{success}}</p>
+                </div>
+            </div>
+            <div *ngIf="error">
+                <div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="emptyMsg()">&times;</a>
+                    <p>{{error}}</p>
+                </div>
+            </div>
+            <legend><i class="glyphicon glyphicon-globe"></i> Add Users</legend>
+            <form #addUserForm="ngForm" class="form" role="form" id="signupForm" (submit)="addUser(addUserForm.value)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control" name="firstName" ngModel placeholder="first name" type="text"
+                               #firstName="ngModel" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control" name="lastName" ngModel placeholder="last name" type="text"
+                               #lastName="ngModel" required/>
+                    </div>
+                </div>
+                <br>
+                <input class="form-control" name="email" ngModel placeholder="Your Email" type="email"
+                       #email="ngModel" required/><br>
+                <input class="form-control" name="password" ngModel placeholder="Enter Password" type="password"
+                       #password="ngModel" required/><br>
+                <input class="form-control" name="confirmPassword" ngModel placeholder="Re-enter Password"
+                       type="password" #confirmPassword="ngModel" required/><br>
+                <input class="form-control" name="phone" ngModel placeholder="Phone Number"
+                       type="text" #phone="ngModel" required/>
+                <br/>
+                <br/>
+                <button class="btn btn-lg btn-primary btn-block" [disabled]="!addUserForm.valid" type="submit">
+                    Sign up
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

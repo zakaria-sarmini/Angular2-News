@@ -1,0 +1,18 @@
+@keyframes slide {
+    0%   {opacity: 0; top: -10px}
+    25%  {opacity: 0.25; top: -7.5px}
+    50%  {opacity: 0.5; top: -5px}
+    75%  {opacity: 0.75; top: -2.5px}
+    100% {opacity: 1; top: 0}
+}
+
+.slide {
+    display: inherit;
+    animation-name: slide;
+    animation-duration: 0.3s;
+}
+
+.pagi {
+    text-decoration: none !important;
+    cursor: pointer;
+}

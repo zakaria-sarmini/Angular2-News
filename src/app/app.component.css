@@ -1,0 +1,49 @@
+/*@Medias*/
+
+@media screen and (max-width: 768px){
+    .social-logo {
+        text-align: center;
+    }
+
+    .social-circle li a {
+        font-size: 30px;
+    }
+
+    .subscribe {
+        padding: 0;
+    }
+
+    span.input.input--kaede {
+        float: none;
+        margin: 2% auto;
+    }
+
+    #onAir {
+        margin-top: 0px;
+        text-align: center;
+        color: #1ab1ed;
+    }
+}
+
+@media screen and (max-width: 34em) {
+    .input__field--kaede:focus + .input__label--kaede,
+    .input--filled .input__label--kaede  {
+        -webkit-transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+        transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 992px) {
+    #myCarousel {padding-right:33.3333%;}
+    #myCarousel .carousel-controls {display:none;}
+}
+@media (max-width: 991px) {
+    .carousel-caption p,
+    #myCarousel .list-group {display:none;}
+}
+
+/*-------------------------------------------------------*/
+
+
+

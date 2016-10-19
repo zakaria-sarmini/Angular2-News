@@ -1,0 +1,64 @@
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h5 class="text-center">upload files from your computer(TODO after Angularfire2 Update)</h5>
+            <div class="input-group image-preview">
+                <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                        <span class="glyphicon glyphicon-remove"></span> Clear
+                    </button>
+                    <button type="button" (click)="upload()" class="btn btn-primary image-preview-clear"
+                            style="display:none;">
+                        <span class="glyphicon glyphicon-open"></span> upload
+                    </button>
+                    <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title">Browse</span>
+                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
+            <h5 class="text-center">Add title to your Story</h5>
+            <input [(ngModel)]="title" type="text" class="form-control" placeholder="report title">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5">
+            <h5 class="text-center">Story's Tags seperated by comma ','</h5>
+            <input [(ngModel)]="tags" type="text" class="form-control"
+                   placeholder="e.g  syria,chemical attack,refugees">
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h5 class="text-center">Add image to the title</h5>
+            <input [(ngModel)]="image" type="text" class="form-control"
+                   placeholder="Main image url">
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h5 class="text-center">Write Your Stroy</h5>
+            <form #reportForm="ngForm" role="form" class="form" (submit)="getContent(reportForm.value)">
+                <input type="text" class="form-report" name="content" ngModel #content="ngModel"/><br>
+                <div *ngIf="success">
+                    <div class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="emptyMsg()">&times;</a>
+                        {{success}}
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br><br><br>

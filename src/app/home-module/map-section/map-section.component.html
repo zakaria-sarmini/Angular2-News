@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let article of articles; let i = index" class="col-md-3 col-sm-6">
+                <div class="thumbnail box">
+                    <a routerLink="/interviews/{{article.$key}}"><img style="width: 760px;height: 180px"
+                                                                      src="{{article.image}}"
+                                                                      class="img-responsive" alt="..."></a>
+                    <div class="caption">
+                        <h4>{{article.title}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail box">
+                    <img src="http://sd.keepcalm-o-matic.co.uk/i-w600/we-muslims-pray-for-gaza-syria-and-all-humanity.jpg"
+                         alt="...">
+                    <div class="caption">
+                        <p>We Muslims Pray For Gaza, Syria, and all humanity</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12"
+                 style="background: url(http://rozana.fm/sites/all/modules/home_page_config/img/map_bkg_web_en.jpg) no-repeat top left; background-size: cover">
+                <div class="col-sm-6 col-md-6"></div>
+                <div class="col-sm-6 col-md-6">
+                    <br><br>
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td><a>Aleppo</a></td>
+                            <td><a>Damascus</a></td>
+                        </tr>
+                        <tr>
+                            <td><a>Deir ez-Zor</a></td>
+                            <td><a>Tartus</a></td>
+                        </tr>
+                        <tr>
+                            <td><a>Homs</a></td>
+                            <td><a>Al-Suwayda</a></td>
+                        </tr>
+                        <tr>
+                            <td><a>Daraa</a></td>
+                            <td><a>Al-Raqqah</a></td>
+                        </tr>
+                        <tr>
+                            <td><a>Hama</a></td>
+                            <td><a>Idlib</a></td>
+                        </tr>
+                        <tr>
+                            <td><a>Qunaitara</a></td>
+                            <td><a>Al-Hasakah</a></td>
+                        </tr>
+                        <tr>
+                            <td><a>Latakia</a></td>
+                            <td><a>Qamishli</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

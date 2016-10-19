@@ -1,0 +1,26 @@
+.black {
+    background-color: #222;
+}
+
+.width {
+    max-width: 960px;
+}
+
+img.firstSection {
+    position: relative;
+}
+
+div.imgCaption {
+    position: absolute;
+    display: inline-block;
+    width: 93%;
+    bottom: 0px;
+    left: 3%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+div.imgCaption p, div.imgCaption h4 {
+    padding: 10px;
+    color: white;
+    opacity: 1 !important;
+}

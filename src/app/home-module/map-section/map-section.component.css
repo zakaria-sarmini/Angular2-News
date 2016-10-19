@@ -1,0 +1,21 @@
+.table td a {
+    color: #1fc1d0;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.table td a:hover {
+    margin-left: 7%;
+    display: inline-block;
+}
+
+.box {
+    transition:  0.5s;
+}
+
+.box:hover{
+    border: 1px solid #16a085;
+    border-radius:0;
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}

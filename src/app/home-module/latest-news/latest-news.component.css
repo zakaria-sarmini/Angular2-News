@@ -1,0 +1,22 @@
+.black {
+    background-color: #222;
+}
+
+.container.width {
+    max-width: 960px;
+}
+
+div.caption h3 {
+    margin-top: 2%;
+}
+
+div.articles {
+    background-color: transparent !important;
+}
+
+.latest-news-header {
+    background-color: #fff;
+    padding: 1%;
+    font-weight: 400;
+}
+

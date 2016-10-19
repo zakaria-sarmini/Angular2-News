@@ -1,0 +1,209 @@
+img.wetterImg {
+    width: 100%;
+    height: auto;
+}
+
+.info_bg p {
+    margin-bottom: -.2em;
+}
+
+.climate_bg {
+    position: absolute;
+    top: 0;
+    left: 235px;
+    z-index: 6;
+    width: 163px;
+    height: 149px;
+    border-top-right-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.weathericon {
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 1.226993865%;
+    z-index: 5;
+    width: 160px;
+    height: auto;
+    overflow: hidden;
+}
+
+.containerx {
+    font: 400 1em/1.38 Montserrat;
+    position: relative;
+    z-index: 9;
+    width: 398px;
+    height: 208px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+}
+
+.dropicon {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: -3.9110429448%;
+    z-index: 3;
+    width: 41px;
+    height: auto;
+    overflow: hidden;
+}
+
+.not-available, .failed {
+    position: absolute;
+    top: 464px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 248px;
+    min-height: 24px;
+    margin: 0 auto;
+    font: 0.625em/1.38 'Trebuchet MS';
+    color: rgb(0, 0, 0);
+}
+
+.humidity {
+    position: absolute;
+    top: 19px;
+    left: 29px;
+    z-index: 2;
+    width: 46px;
+    min-height: 29px;
+    font-size: 1em;
+    line-height: 1.38;
+    text-align: center;
+    color: #ffffff;
+}
+
+.info_bg {
+    position: absolute;
+    top: 149px;
+    left: 235px;
+    z-index: 4;
+    width: 163px;
+    height: 59px;
+    border-bottom-right-radius: 10px;
+    background-color: #1ab1ed;
+}
+
+.locationX {
+    position: absolute;
+    top: 128px;
+    left: 63px;
+    z-index: 8;
+    width: 108px;
+    min-height: 59px;
+    font-size: 1.313em;
+    font-weight: 400;
+    line-height: 1.38;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
+.temperature {
+    position: absolute;
+    top: 38px;
+    left: 72px;
+    z-index: 7;
+    width: 109px;
+    min-height: 28px;
+    font-size: 4.25em;
+    font-weight: 700;
+    line-height: 1.38;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.windicon {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 43.1173312883%;
+    z-index: 1;
+    width: 50px;
+    height: auto;
+    overflow: hidden;
+}
+
+.windspeed {
+    position: absolute;
+    top: 9px;
+    left: 109px;
+    width: 50px;
+    min-height: 29px;
+    font-size: 1em;
+    line-height: 1.38;
+    text-align: center;
+    color: #ffffff;
+}
+
+.windspeed p {
+    margin-bottom: -.2em;
+}
+
+
+.media-carousel
+{
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+    margin-top: 30px;
+}
+
+.media-carousel .carousel-control.left
+{
+    left: -12px;
+    background-image: none;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    height: 40px;
+    width : 40px;
+    margin-top: 30px
+}
+
+.media-carousel .carousel-control.right
+{
+    right: -12px !important;
+    background-image: none;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    height: 40px;
+    width : 40px;
+    margin-top: 30px
+}
+
+.media-carousel .carousel-indicators
+{
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+
+.media-carousel .carousel-indicators li
+{
+    background: #c0c0c0;
+}
+.media-carousel .carousel-indicators .active
+{
+    background: #333333;
+}
+
+@media screen and (max-width: 768px){
+    .containerx{
+        margin-top: 4% !important;
+    }
+}
+
+@media screen and (max-width: 968px){
+    .containerx{
+        margin-top: 4% !important;
+    }
+}
+

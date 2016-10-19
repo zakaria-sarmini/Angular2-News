@@ -1,0 +1,80 @@
+<app-header></app-header>
+<br>
+<div [ngSwitch]="status">
+    <div *ngSwitchCase="'loading'">
+        <div class="col-md-8 col-md-offset-2">
+            <div class='uil-ripple-css' style='transform:scale(0.59);'>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchDefault>
+        <div class="container" id="goUp">
+            <div class="col-md-8 col-md-offset-2">
+                <div *ngFor="let video of videos | deSort | paginate: { itemsPerPage: 5, currentPage: p }" class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4><strong><a>{{video.title}}</a></strong></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="thumbnail">
+                                    <img src="http://img.youtube.com/vi/{{video.videoURL}}/0.jpg" class="img-responsive"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{video.description}}</p>
+                                <button routerLink="{{video.$key}}" class="btn btn-primary btn-sm">Watch Video</button>
+                                <p></p>
+                                <p><span class="glyphicon glyphicon-user text-warning" aria-hidden="true"></span>
+                                <span>{{video.author}}</span>
+                                | <span class="glyphicon glyphicon-calendar text-warning"
+                                        aria-hidden="true"></span>
+                                {{video.date | date:'yMMMd'}}
+                            </div>
+                            <br>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-9 text-center">
+                    <pagination-controls #pagination (pageChange)="p = $event">
+                        <ul (click)="windowScroll()" class="pagination">
+                            <li class="pagination-previous"
+                                [class.disabled]="pagination.isFirstPage()">
+                                <a class="pagi" *ngIf="!pagination.isFirstPage()"
+                                   (click)="pagination.previous()">&laquo;</a>
+                            </li>
+                            <li *ngFor="let page of pagination.pages"
+                                [class.active]="pagination.getCurrent() === page.value"
+                                [class.current]="pagination.getCurrent() === page.value">
+                                <a class="pagi" (click)="pagination.setCurrent(page.value)"
+                                   *ngIf="pagination.getCurrent() !== page.value">
+                                    <span>{{ page.label }}</span>
+                                </a>
+                                <a class="pagi" *ngIf="pagination.getCurrent() === page.value">
+                                    {{ page.label }}
+                                </a>
+                            </li>
+                            <li class="pagination-next" [class.disabled]="pagination.isLastPage()"
+                                *ngIf="pagination.directionLinks">
+                                <a class="pagi" *ngIf="!pagination.isLastPage()"
+                                   (click)="pagination.next()">&raquo;</a>
+                            </li>
+                        </ul>
+                    </pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="col-md-12">
+    <app-footer></app-footer>
+</div>

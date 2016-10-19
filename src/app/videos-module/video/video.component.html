@@ -1,0 +1,36 @@
+<app-header></app-header>
+<br><br><br>
+<div class="container">
+    <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+        <a class="btn btn-default btn-lg btn-block">{{(video | async)?.title}}</a><br>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 text-center">
+        <a class="thumbnail">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        [src]="(video | async)?.videoURL | byPassSecurity" allowfullscreen></iframe>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="col-md-6 text-left">
+                <p style="font-size: 16px">{{(video | async)?.author}} <span class="text-warning">|</span> {{(video |
+                    async)?.date | date:'yMMMd'}}</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <button href="#" class="btn btn-md icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></button>
+                <button href="#" class="btn btn-md icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></button>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+        <p style="margin-bottom: 7%;">{{(video | async)?.description}}</p>
+        <div id="fb-root"></div>
+        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+             data-width="100%" data-numposts="5"></div>
+    </div>
+</div>
+<br><br><br>
+<app-footer></app-footer>

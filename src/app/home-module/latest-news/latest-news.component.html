@@ -1,0 +1,55 @@
+<div class="container-fluid black">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div *ngIf="picOfTheDay" class="col-md-6 col-sm-12" style="margin-bottom: 19px;">
+                <h3 class="text-warning text-center latest-news-header">Picture of Day</h3>
+                <img src="{{picOfTheDay.photoURL}}" alt="" class="img-thumbnail">
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h3 class="text-warning text-center latest-news-header">Latest Interviews</h3>
+                <div class="panel-group" id="accordion">
+                    <div *ngFor="let interview of (interviews | async | deSort); let i = index"
+                         class="panel panel-default articles">
+                        <div class="panel-heading articles">
+                            <h4 class="panel-title text-primary">
+                                <a style="text-decoration: none" data-toggle="collapse" data-parent="#accordion"
+                                   href="{{'#collapse' + i}}">
+                                    {{(interview)?.title}}</a>
+                            </h4>
+                        </div>
+                        <div id="{{'collapse' + i}}" class="panel-collapse collapse">
+                            <div (click)="openInterview((interview)?.$key)"
+                                 innerHTML="{{interview.content.substr(interview.content.search(regex), 180) + '...' + readMe}}"
+                                 class="panel-body" style="color: #fff;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-warning text-center latest-news-header">Latest Video Reports</h3>
+                <div class="panel-group" id="accordion1">
+                    <div *ngFor="let video of (videos | async | deSort); let i = index"
+                         class="panel panel-default articles">
+                        <div class="panel-heading articles">
+                            <h4 class="panel-title text-primary">
+                                <a style="text-decoration: none" data-toggle="collapse" data-parent="#accordion1"
+                                   href="{{'#collapse' + i+1}}">
+                                    {{video.title}}</a>
+                            </h4>
+                        </div>
+                        <div id="{{'collapse' + i+1}}" class="panel-collapse collapse">
+                            <div class="panel-body" style="color: #fff;">
+                                <p>{{video.description}}
+                                    <button (click)="openVideo(video.$key)" class="btn btn-warning btn-sm">Watch
+                                        Video
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

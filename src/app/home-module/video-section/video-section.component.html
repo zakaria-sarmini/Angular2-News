@@ -1,0 +1,31 @@
+<div class="container-fluid black">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <h2 style="padding: 5%" class="text-warning text-center title">Caricature</h2>
+                <hr>
+                <div *ngIf="caricature">
+                    <div *ngFor="let photo of caricature">
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="{{photo.photoURL}}" alt="">
+                            <div class="overlay">
+                                <!--<h2>Painted By</h2>-->
+                                <a class="info" routerLink="/caricature">Caricature Page</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="video" class="col-md-8 col-sm-8">
+                <h2 class="text-warning text-center title">{{video.title}}</h2>
+                <hr>
+                <br>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" width="640px" height="480px"
+                            [src]="video.videoURL | byPassSecurity"></iframe>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+</div>

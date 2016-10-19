@@ -1,0 +1,17 @@
+.pagi {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.slide {
+    animation-name: slide;
+    animation-duration: 0.3s;
+}
+
+@keyframes slide {
+    0%   {opacity: 0;position: relative; top: -10px}
+    25%  {opacity: 0.25;position: relative; top: -7.5px}
+    50%  {opacity: 0.5;position: relative; top: -5px}
+    75%  {opacity: 0.75;position: relative; top: -2.5px}
+    100% {opacity: 1;position: relative; top: 0}
+}

@@ -1,0 +1,46 @@
+<div [ngSwitch]="status">
+    <div *ngSwitchCase="'loading'">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <div class='uil-ripple-css' style='transform:scale(0.59);'>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchDefault>
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div *ngFor="let story of mainSlider | deSort; let i = index" class="item" [class.active]="i === 0">
+                        <img class="img-responsive" style="width: 760px;height: 500px" src="{{story.image}}">
+                        <div class="carousel-caption">
+                            <h4>
+                                <a class="text-warning" style="text-decoration: none"
+                                   routerLink="/stories/{{story.$key}}">{{story.title}}</a>
+                            </h4>
+                            <p innerHTML="{{story.content.substring(0, 250) + '...'}}">
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-group col-sm-4" style="height: 100%">
+                    <li *ngFor="let story of mainSlider; let i = index" [class.active]="i===0" [attr.data-slide-to]="i"
+                        data-target="#myCarousel" class="list-group-item heightFix">
+                        <h4>{{story.title}}</h4>
+                    </li>
+                </ul>
+                <div class="carousel-controls">
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

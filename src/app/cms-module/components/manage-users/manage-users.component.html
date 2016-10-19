@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+<div class="container-fluid" style="margin-right: 2%">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 well well-sm">
+            <table class="table table-hover">
+                <thead>
+                <tr class="active">
+                    <th class="text-primary">#</th>
+                    <th class="text-primary">First Name</th>
+                    <th class="text-primary">Last Name</th>
+                    <th class="text-primary">Email</th>
+                    <th class="text-primary">Tel</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user of (users | async) ; let i = index" class="active">
+                    <td>{{i + 1}}</td>
+                    <td>{{user.firstname}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

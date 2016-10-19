@@ -1,0 +1,23 @@
+<div class="container-fluid black">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div *ngIf="streamSectionStory" class="col-md-6 col-sm-6 col-xs-12">
+                <img src="{{streamSectionStory[0].image}}" class="img-thumbnail firstSection" alt="...">
+                <div class="imgCaption">
+                    <p>{{streamSectionStory[0].author}} <span>|</span> {{streamSectionStory[0].date | date:'yMMMd'}}</p>
+                    <h4>
+                        <a style="text-decoration: none" class="text-warning"
+                           routerLink="/stories/{{streamSectionStory[0].$key}}">{{streamSectionStory[0].title}}</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 text-center">
+                <h1 style="text-align: center; margin: 12%;color: #898b8e">Go live now !</h1>
+                <audio style="width: 100%" controls>
+                    <source src="http://str30.creacast.com/radio_rozana">
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>

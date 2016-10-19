@@ -1,0 +1,32 @@
+<app-header></app-header>
+<br><br><br>
+<br>
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <a class="thumbnail">
+            <img src="{{(interview | async)?.image}}" alt="">
+        </a>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <div class="col-md-6 text-left">
+                <p style="font-size: 16px">{{(interview | async)?.author}} <span class="text-warning">|</span>
+                    {{(interview |
+                    async)?.date | date:'yMMMd'}}</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <button href="#" class="btn btn-md icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></button>
+                <button href="#" class="btn btn-md icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></button>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <div style="margin-bottom: 7%;" innerHTML="{{(interview | async)?.content}}" class="col-md-12">
+        </div>
+        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+             data-width="100%" data-numposts="5"></div>
+    </div>
+</div>
+<br><br><br>
+<app-footer></app-footer>

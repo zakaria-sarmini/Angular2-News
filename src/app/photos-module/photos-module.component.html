@@ -1,0 +1,56 @@
+<app-header></app-header>
+<br>
+<div [ngSwitch]="status">
+    <div *ngSwitchCase="'loading'">
+        <div class="col-md-8 col-md-offset-2">
+            <div class='uil-ripple-css' style='transform:scale(0.59);'>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchDefault>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class='list-group gallery'>
+                    <div *ngFor="let photo of photos | deSort | paginate: { itemsPerPage: 8, currentPage: p }"
+                         class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                        <a class="thumbnail fancybox slide" rel="ligthbox" href="{{photo.photoURL}}">
+                            <img class="img-responsive" alt="" src="{{photo.photoURL}}"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <pagination-controls #pagination (pageChange)="p = $event;pageChanged($event)">
+                    <ul class="pagination">
+                        <li class="pagination-previous" [class.disabled]="pagination.isFirstPage()">
+                            <a class="pagi" *ngIf="!pagination.isFirstPage()"
+                               (click)="pagination.previous()">&laquo;</a>
+                        </li>
+                        <li *ngFor="let page of pagination.pages"
+                            [class.active]="pagination.getCurrent() === page.value"
+                            [class.current]="pagination.getCurrent() === page.value">
+                            <a class="pagi" (click)="pagination.setCurrent(page.value)"
+                               *ngIf="pagination.getCurrent() !== page.value">
+                                <span>{{ page.label }}</span>
+                            </a>
+                            <a class="pagi" *ngIf="pagination.getCurrent() === page.value">
+                                {{ page.label }}
+                            </a>
+                        </li>
+                        <li class="pagination-next" [class.disabled]="pagination.isLastPage()"
+                            *ngIf="pagination.directionLinks">
+                            <a class="pagi" *ngIf="!pagination.isLastPage()" (click)="pagination.next()">&raquo;</a>
+                        </li>
+                    </ul>
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>
