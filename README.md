@@ -1,5 +1,23 @@
 # News
 
+An Angular 2 & jQuery News application with simple CMS
+
+# install
+make sure you have NodeJs and angular-cli installed then cd to News folder and run
+```bash
+npm install 
+```
+to run the app 
+```bash
+ng serve 
+```
+then with your browser, navigate to localhost:4200 
+
+# Live Demo
+
+https://news-9a95c.firebaseapp.com
+use admin@admin.com as email and 123456 as password to play around with CMS.
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
 ## Development server
