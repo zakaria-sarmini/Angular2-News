@@ -18,9 +18,12 @@ then with your browser, navigate to localhost:4200
 https://news-9a95c.firebaseapp.com<br>
 use admin@admin.com as email and 123456 as password to play around with CMS.
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
+
 
 ## Development server
+
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
