@@ -5,7 +5,7 @@ An Angular 2 & jQuery News application with simple CMS
 # install
 make sure you have NodeJs and angular-cli installed then cd to News folder and run
 ```bash
-npm install 
+npm install --save
 ```
 to run the app 
 ```bash
